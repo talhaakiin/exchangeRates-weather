@@ -1,0 +1,156 @@
+/* Genel Gövde Stilleri */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-image: url('./assets/background.jpg'); /* Fotoğrafın yolu */
+  background-size: cover; /* Fotoğrafı kaplaması */
+  background-position: center; /* Fotoğrafı ortalama */
+  background-repeat: no-repeat; /* Fotoğrafın tekrarlanmaması */
+}
+
+/* Uygulama Konteyneri */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  /* Arka plan rengi, fotoğrafın üstündeki içeriklerin görünür olması için */
+  background-color: rgba(166, 155, 155, 0.5); 
+  border-radius: 10px;
+}
+
+/* Dropdown ve Giriş Alanları */
+select,
+input[type="number"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  margin: 10px auto; /* Ortalamak için margin'i güncelledik */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+select:focus,
+input[type="number"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Başlık */
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Radyo Düğmeleri */
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.flex-row input {
+  margin-right: 5px;
+}
+
+/* Sonuç Metni */
+p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-top: 10px;
+}
+
+/* Buton Stili */
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Esneklik ve Düzen */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+
+  select,
+  input[type="number"] {
+    max-width: 100%;
+  }
+
+  .flex-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+
+/* Radyo Düğmeleri */
+input[type="radio"] {
+  appearance: none; /* Tarayıcı varsayılan stilini kaldırır */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+input[type="radio"]:checked::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: #007bff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type="radio"]:focus {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+}
+
+/* Radyo Düğmeleri Etiketi */
+label {
+  font-size: 1rem;
+  margin-left: 8px;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+input[type="radio"]:checked + label {
+  color: #007bff;
+}
